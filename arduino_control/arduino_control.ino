@@ -8,10 +8,10 @@
  */
  
 //Analog pin specifications
-const short pINPUT_NAV = 0;
-const short pINPUT_DEPTH = 1;
-const short pINPUT_CONDUCTIVITY = 4;
-const short pINPUT_COLOR = 5;
+const short pINPUT_NAV = 14;
+const short pINPUT_DEPTH = 15;
+const short pINPUT_CONDUCTIVITY = 18;
+const short pINPUT_COLOR = 19;
 //Digial pin specifications
 const short pWIFI_OUT = 13;
 const short pWIFI_IN = 12;
