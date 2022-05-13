@@ -39,7 +39,7 @@ The mission actuation code in its entirety. Almost completely untested, providin
  - The color test of the collected water and the salinity test, and its post to the VISION system comms bus
  - The resumption of navigation actions
 
-# L156-L171 [link](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/arduino_control.ino#L156-L171)
+### L156-L171 [link](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/arduino_control.ino#L156-L171)
 This is the top-level function for navigation handling, providing:
  - Location updates for any function called from it for this program tick
  - Movement watchdog checks to make sure the OTV is not stuck against a wall
@@ -47,5 +47,5 @@ This is the top-level function for navigation handling, providing:
  - Location arrival updates so other actions can be resumed
 
 
-## Navigation File: [navigation)library.cpp](https://github.com/aswisdak/otterworldly_otv_2022/blob/main/arduino_control/navigation_library.ino)
+## Navigation File: [navigation_library.cpp](https://github.com/aswisdak/otterworldly_otv_2022/blob/main/arduino_control/navigation_library.ino)
 This is the navigation code file, handling any and all navigation (not watchdog) tasks
