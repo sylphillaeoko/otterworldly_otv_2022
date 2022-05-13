@@ -33,3 +33,11 @@ This code does the following:
  - Provides bare minimum objective fulfillment requirements
  - Provides a memory and program storage space optimized program to fit within the limits of the Arduino Uno
  - Provide all of these with a well-documented, simple, and stylistically consistent format
+
+## A Note For Future Students
+If you have found this code to use as an example, or your professor has shown it to you as such, be aware:
+ - This code is not perfect, and navigation _can_ lock up in some very specific conditions even within the simulator
+     - Mostly this happens because the interrupts do not properly process the edge of the arena
+     - The edge of the arena does not provide a distance notification within the simulator
+ - This code assumes that the OTV is handling its own PWM: that there are no motor drivers. This was, retroactively, a terrible design decision on our end
+ - This code only provides mission code examples for the water sampling mission as that was our task
