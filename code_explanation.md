@@ -2,7 +2,7 @@
 This file explains in detail the function and thought process behind each part of the code, divided by file.  
 This file does **not** cover the simulator code as it is derivate of the main nagivation + watchdog code
 
-## Main File: [arduino_control.cpp](https://github.com/aswisdak/otterworldly_otv_2022/blob/main/arduino_control/arduino_control.ino)
+## Main File: [arduino_control.ino](https://github.com/aswisdak/otterworldly_otv_2022/blob/main/arduino_control/arduino_control.ino)
 This is the main code file, containing central functions as well as the Arduino `setup()` and `loop()` functions  
 
 ### L10-L26: [link](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/arduino_control.ino#L10-L26)
@@ -47,7 +47,7 @@ This is the top-level function for navigation handling, providing:
  - Location arrival updates so other actions can be resumed
 
 
-## Navigation File: [navigation_library.cpp](https://github.com/aswisdak/otterworldly_otv_2022/blob/main/arduino_control/navigation_library.ino)
+## Navigation File: [navigation_library.ino](https://github.com/aswisdak/otterworldly_otv_2022/blob/main/arduino_control/navigation_library.ino)
 This is the navigation code file, handling any and all navigation (not watchdog) tasks
 
 ### L16-L85: [link](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L16-L85)
@@ -62,3 +62,16 @@ The distance and direction-finder navigation function that determines OTV headin
  - [L83-L93](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L89-L93): Find the angle between the OTV heading and the object's direction via trigonometry and some math, in radians
  - [L95-L99](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L95-L99): Uses the above information to go either straight or curved, or instead update locations changed from the watchdog
  - [L100-L106](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L100-L106): Changes the position the destination is at back to its original position if it was modified by the watchdog navigation ssytem
+
+
+
+
+
+## Sensor File: [sensor_library.ino](https://github.com/aswisdak/otterworldly_otv_2022/blob/main/arduino_control/sensor_library.ino)
+The file for any sensor interactions that need more than a line or two of code to read.
+
+### L7-L26: [link](https://github.com/aswisdak/otterworldly_otv_2022/blob/89b3c797a822b9166d40c39ab6ad2cb555bd4ed8/arduino_control/sensor_library.ino#L7-L26)
+Functions for interfacing with the ultrasonic sensors, the depth and navigation sensors. Their conversion factors are different numbers because one returns in cm and the other in mm for different scales
+
+### L29-L59: [link](https://github.com/aswisdak/otterworldly_otv_2022/blob/89b3c797a822b9166d40c39ab6ad2cb555bd4ed8/arduino_control/sensor_library.ino#L29-L59)
+Functions for reading each color from the color sensor: they're almost the exact same except which of the binary color-choice pins are activated to read each color
