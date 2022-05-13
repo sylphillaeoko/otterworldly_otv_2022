@@ -39,5 +39,7 @@ If you have found this code to use as an example, or your professor has shown it
  - This code is not perfect, and navigation _can_ lock up in some very specific conditions even within the simulator
      - Mostly this happens because the interrupts do not properly process the edge of the arena
      - The edge of the arena does not provide a distance notification within the simulator
- - This code assumes that the OTV is handling its own PWM: that there are no motor drivers. This was, retroactively, a terrible design decision on our end
+ - This code assumes that the OTV is handling its own PWM: that there are no motor drivers
+     - This was, retroactively, a terrible design decision on our end
+     - This code is left only as an example of that style of design, not for teams to emulate it
  - This code only provides mission code examples for the water sampling mission as that was our task
