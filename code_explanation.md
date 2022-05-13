@@ -39,7 +39,7 @@ The mission actuation code in its entirety. Almost completely untested, providin
  - The color test of the collected water and the salinity test, and its post to the VISION system comms bus
  - The resumption of navigation actions
 
-### L156-L171 [link](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/arduino_control.ino#L156-L171)
+### L156-L171: [link](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/arduino_control.ino#L156-L171)
 This is the top-level function for navigation handling, providing:
  - Location updates for any function called from it for this program tick
  - Movement watchdog checks to make sure the OTV is not stuck against a wall
@@ -49,3 +49,16 @@ This is the top-level function for navigation handling, providing:
 
 ## Navigation File: [navigation_library.cpp](https://github.com/aswisdak/otterworldly_otv_2022/blob/main/arduino_control/navigation_library.ino)
 This is the navigation code file, handling any and all navigation (not watchdog) tasks
+
+### L16-L85: [link](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L16-L85)
+The main obstalce avoidance function. Purpose changes depending on progress through process
+ - [L19-L27](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L19-L27): Backs the vehicle up until it is 25cm from the obstacle
+ - [L29-L53](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L29-L53): Wobble the OTV back and forth slightly, sensing and recording data on which way the OTV will clear the obstacle faster
+ - [L55-L72](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L55-L72): Turn for either a small set distance or until the OTV cannot see an obstacle, whichever happens first
+ - [L74-L82](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L74-L82): Drive forward for a set distance (independent of time) and finish obstacle navigation routine
+
+### L88-L111: [link](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L88-L111)
+The distance and direction-finder navigation function that determines OTV heading when not avoiding obstacles
+ - [L83-L93](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L89-L93): Find the angle between the OTV heading and the object's direction via trigonometry and some math, in radians
+ - [L95-L99](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L95-L99): Uses the above information to go either straight or curved, or instead update locations changed from the watchdog
+ - [L100-L106](https://github.com/aswisdak/otterworldly_otv_2022/blob/fb40f81672afec5c19dae8134dbc77c88fe8fd98/arduino_control/navigation_library.ino#L100-L106): Changes the position the destination is at back to its original position if it was modified by the watchdog navigation ssytem
