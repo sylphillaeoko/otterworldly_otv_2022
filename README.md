@@ -3,8 +3,8 @@ Search terms: University of Maryland, Over-Terrain Vehicle, Arduino
 
 This is the project of the Otterworldly OTV team for the Spring 2022 semester
 
-Code contributed was almost all by Alex Swisdak, with minor contributions from Mithran Sivakumar, Aidan Ellwanger  
-Github, associated code explanation, and project overview was by Alex Swisdak  
+Code contributed was almost all by Sylph Illaeoko, with minor contributions from Mithran Sivakumar, Aidan Ellwanger  
+Github, associated code explanation, and project overview was by Sylph Illaeoko  
 
 ## Project Overview
 This project is divided into five files:
